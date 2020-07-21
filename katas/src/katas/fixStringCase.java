@@ -13,9 +13,7 @@ public class fixStringCase {
 			if(characters[characters.length/2]>90)
 				result = str.toLowerCase();
 			else
-			{
 				result = str.toUpperCase();
-			}			
 		}
 
 		return result;
