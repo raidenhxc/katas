@@ -1,7 +1,5 @@
 package katas;
 
-// https://www.codewars.com/kata/5a24a35a837545ab04001614/train/java
-
 public class InterlacedSpiralCipher {
 
     public static String encode(String s) {
@@ -32,39 +30,10 @@ public class InterlacedSpiralCipher {
 		
 		for(k=0;k<original_range;k+=2) {
 			range=(int)original_range-(cycle*2);
-			System.out.println(range);
 			if (range<1)
 				range=1;
 			
-	        for(i=0;i<range-1;i++) {
-	        	for(j=0;j<4;j++) {
-	        		if(j==0) {
-	        			rows=1+cycle;
-	        			cols=1+cycle;
-	        			cols+=i;
-	        		}
-	        		else if (j==1) {
-	        			rows=1+cycle;
-	        			cols=range+cycle;
-	        			rows+=i;        			
-	        		}
-	        		else if (j==2) {
-	        			rows=range+cycle;
-	        			cols=range+cycle;
-	        			cols-=i;
-	        		}
-	        		else {
-	        			rows=range+cycle;
-	        			cols=1+cycle;
-	        			rows-=i;
-	        		}
-	        		text[rows-1][cols-1]=charArray[charCounter];
-	        		charCounter++;
-	        	}
-	        }
-	        cycle++;
-	        /*
-			if(range==10000) {
+			if(range==1) {
 				rows=cycle+1;
 				cols=cycle+1;
 				text[rows-1][cols-1]=charArray[charCounter];
@@ -91,13 +60,13 @@ public class InterlacedSpiralCipher {
 		        			cols=1+cycle;
 		        			rows-=i;
 		        		}
+
 		        		text[rows-1][cols-1]=charArray[charCounter];
 		        		charCounter++;
 		        	}
 		        }
 		        cycle++;
 			}
-			*/
 
 		}
 		
@@ -176,15 +145,13 @@ public class InterlacedSpiralCipher {
         while(i>0 && result.charAt(i-1)==' ') {
         	i--;
         }
-        
         return result.substring(0,i);
-    	
     }
 	
 	public static void main (String args[]) {
 		System.out.println(encode("Romani ite domum"));
 		System.out.println(encode("Sic transit gloria mundi"));
-		//System.out.println("");
-		//System.out.println(decode("z$W(=EBK:kL.BFzoM/H@  (k@_zN)*(:.TLs"));
+		System.out.println("");
+		System.out.println(decode("z$W(=EBK:kL.BFzoM/H@  (k@_zN)*(:.TLs"));
 	}
 }
